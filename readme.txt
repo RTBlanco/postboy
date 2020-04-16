@@ -1,0 +1,5 @@
+Email - Daily refresher will be sent via email 
+ADM  - Amazon Device notification 
+FCM - Firebase Cload messaging - ANDROID APP
+APN - apple push notification - IOS app 
+WEBPUSH - browser notification
