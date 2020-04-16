@@ -18,7 +18,7 @@ import config
 login_url = 'https://tlodockertest.transparent.local:7070/rest/admin/login'
 payload = {'login':config.username, 'password':config.password}
 jsessionid = requests.Session().post(login_url, json=payload, verify=False).cookies.values()[0]
-
+print(jsessionid)
 
 # with requests.Session() as session:
 #     # post = session.post(login_url, json=payload, headers=custom_header, verify=False)

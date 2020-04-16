@@ -18,16 +18,16 @@ class User:
         self.account_name = account_name
         self.node_name = node_name
 
-    def uuid(self):
+    def uuid(self,jsession):
         """ will bring the correct UUID for the user """ 
 
-        payload = {'login':config.username, 'password':config.password}
+        # payload = {'login':config.username, 'password':config.password}
         # login_url = 'https://tlodockertest.transparent.local:7070/rest/admin/login'
         profile_search = f'https://tlodockertest.transparent.local:7070/rest/user/profile/{self.account_name}'
 
-        search_request = requests.get(profile_search,headers={'Cookie':f'JSESSIONID={Tester.jsessionid()}'}, verify=False)
-        uuid = [search_request.json()[lst].get('userUuid') for lst in range(len(search_request.json())) if search_request.json()[lst].get('nodeName') == 'test_ronny'][0]
-        print(uuid)
+        search_request = requests.get(profile_search,headers={'Cookie':f'JSESSIONID={jsession}'}, verify=False)
+        uuid = [search_request.json()[lst].get('userUuid') for lst in range(len(search_request.json())) if search_request.json()[lst].get('nodeName') == self.node_name][0]
+        # print(uuid)
     
 
 class Notification:
