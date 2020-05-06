@@ -3,7 +3,7 @@ from postV2 import Tester, User, Notification
 
 ronny = Tester('rtoribio','Ac44life#')
 
-sponge_bob = User('sponge_bob','ronny_node')
+phone = User('phone0','ronny_node4')
 
 # uuid = sponge_bob.uuid(ronny.jsessionid())
 
@@ -14,8 +14,8 @@ sponge_bob = User('sponge_bob','ronny_node')
 
 j_id = ronny.jsessionid()
 
-uuid = sponge_bob.uuid(j_id)
+uuid = phone.uuid(j_id)
 
 push = Notification(uuid, j_id)
 
-push.send_daily('APN','ENGLISH','SPANISH')
+push.send_daily('FCM','ENGLISH','SPANISH')
