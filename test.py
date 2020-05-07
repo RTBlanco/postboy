@@ -1,21 +1,8 @@
-from postV2 import Tester, User, Notification
+# from postV2 import Tester, User, Notification
+from postV2 import Tester, Notification
 
+ronny = Tester('rtoribio','Ac44life#','phone0','ronny_node4')
 
-ronny = Tester('rtoribio','Ac44life#')
+push = Notification(UUID=ronny.uuid(), jsessionid=ronny.jsessionid(), device_type='FCM', k_lang='ENGLISH', l_lang='SPANISH')
 
-phone = User('phone0','ronny_node4')
-
-# uuid = sponge_bob.uuid(ronny.jsessionid())
-
-# print(uuid)
-
-# push = Notification(uuid, ronny.jsessionid())
-
-
-j_id = ronny.jsessionid()
-
-uuid = phone.uuid(j_id)
-
-push = Notification(uuid, j_id)
-
-push.send_daily('FCM','ENGLISH','SPANISH')
+push.send_daily()
