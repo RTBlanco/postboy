@@ -11,14 +11,14 @@ class Tester:
     def jsessionid(self):
         """ uses the stick-e url to log to get the jsession id """
         payload = {'login':self.username, 'password':self.password}
-        login_url = 'https://tlodockertest.transparent.local:7070/rest/admin/login'
+        login_url = """ TL link """
         jsessionid = requests.Session().post(login_url, json=payload, verify=False).cookies.values()[0]
         return jsessionid
 
     def uuid(self):
         """ will bring the correct UUID for the user """ 
 
-        profile_search = f'https://tlodockertest.transparent.local:7070/rest/user/profile/{self.account_name}'
+        profile_search = f'""" TL link """{self.account_name}'
         search_request = requests.get(profile_search,headers={'Cookie':f'JSESSIONID={self.jsessionid()}'}, verify=False)
         uuid = [search_request.json()[lst].get('userUuid') for lst in range(len(search_request.json())) if search_request.json()[lst].get('nodeName') == self.node_name][0]
         return uuid
@@ -36,7 +36,7 @@ class Notification:
     def send_daily(self):
         """ Posts the requests for daily refreshser """
 
-        sticke_test_url = f'https://192.168.254.54:7070/rest/external/{self.UUID}/REFRESHER/{self.device_type}/{self.k_lang}/{self.l_lang}'
+        sticke_test_url = f'""" TL link """{self.UUID}""" TL link """{self.device_type}/{self.k_lang}/{self.l_lang}'
         R = requests.post(sticke_test_url, headers={'Host':'notifications.transparent.com','Cookie':f'JSESSIONID={self.jsessionid}'}, verify=False)
 
         print(R.status_code)
