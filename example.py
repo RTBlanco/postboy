@@ -1,7 +1,7 @@
 # from postV2 import Tester, User, Notification
-from postV2 import Tester, Notification
+from post import Tester, Notification
 
-ronny = Tester('username','password','acccount username ','node')
+ronny = Tester(username='TL username',password='TL password',account_name='user username',node_name=' node ',site=' LE,EE or GE test')
 
 push = Notification(UUID=ronny.uuid(), jsessionid=ronny.jsessionid(), device_type='FCM', k_lang='ENGLISH', l_lang='SPANISH')
 
