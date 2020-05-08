@@ -1,4 +1,4 @@
-import requests, config
+import requests
 
 
 class Tester:
